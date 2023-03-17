@@ -6,7 +6,7 @@
 
 .header {
   align-items: center;
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
@@ -15,6 +15,7 @@
 .text {
   font-size: 32px;
   font-weight: 300;
+  text-align: center;
 }
 
 .slider {
@@ -60,8 +61,9 @@
     display: block;
     font-size: 24px;
     font-weight: 300;
-    min-height: 66px;
+    min-height: 50px;
     text-transform: capitalize;
+    text-align: center;
   }
 
   &__time {

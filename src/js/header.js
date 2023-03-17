@@ -1,26 +1,7 @@
-import sun from '../assets/sun.svg';
-import arrow from '../assets/arrow.svg';
-import { getTime } from './time';
-
-const createHeader = (city) => {
-  const {
-    name, country, sunset, sunrise,
-  } = city;
-
+const createHeader = () => {
+  
   const html = `
-    <h1 class="text">${name} ${country}</h1>
-    <div class="sunset-wrap">
-      <div class="sunset">
-        <img class="sunset__sun" src="${sun}">
-        <img class="sunset__arrow sunset__arrow_up" src="${arrow}">
-        <span class="sunset__text">${getTime(sunrise)}</span>
-      </div>
-      <div class="sunset">
-        <img class="sunset__sun" src="${sun}">
-        <img class="sunset__arrow" src="${arrow}">
-        <span class="sunset__text">${getTime(sunset)}</span>
-      </div>
-    </div>
+    <h1 class="text">Star Wars Planets</h1>
   `;
 
   const header = document.createElement('header');

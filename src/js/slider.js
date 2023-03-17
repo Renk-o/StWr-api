@@ -1,23 +1,20 @@
-import { getDayAndTime } from './time';
+
 import arrow from '../assets/arrow.svg';
 
 const createSlide = ({
-  dt_txt: date, main, weather, wind,
+  name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population
 }) => {
-  const { description, icon } = weather[0];
-  const { temp, feels_like: feels, humidity } = main;
-  const { speed } = wind;
 
   const html = `
-    <span class="slide__time">${getDayAndTime(date)}</span>
-    <span class="slide__main">${description}</span>
-    <div class="slide__img-wrap">
-      <img class="slide__img" src="https://openweathermap.org/img/wn/${icon}@4x.png" />
-      <span class="slide__temp">${Math.floor(temp)}°C</span>
-    </div>
-    <span class="slide__humidity">Feels like: <b>${Math.floor(feels)}°C</b></span>
-    <span class="slide__humidity">Humidity: <b>${humidity}%</b></span>
-    <span class="slide__humidity">Wind speed: <b>${speed}m/s</b></span>
+    <span class="slide__main"><b>${name}</b></span>
+    <span class="slide__humidity">Rotation period: <b>${rotation_period} h</b></span>
+    <span class="slide__humidity">Orbital period<b>${orbital_period} day</b></span>
+    <span class="slide__humidity">Diameter: <b>${diameter} km</b></span>
+    <span class="slide__humidity">Climate: <b>${climate}</b></span>
+    <span class="slide__humidity">Gravity: <b>${gravity}</b></span>
+    <span class="slide__humidity">Terrain: <b>${terrain}</b></span>
+    <span class="slide__humidity">Surface water <b>${surface_water}%</b></span>
+    <span class="slide__humidity">Population: <b>${population} М</b></span>
   `;
 
   const slide = document.createElement('li');
@@ -27,12 +24,10 @@ const createSlide = ({
   return slide;
 };
 
-const createSlider = (list) => {
+const createSlider = (results) => {
   const slider = document.createElement('ul');
   slider.classList.add('slider');
-
-  list.map((item) => slider.append(createSlide(item)));
-
+  results.map((item) => slider.append(createSlide(item)));
   return slider;
 };
 
