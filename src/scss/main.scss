@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+@import "reset";
+@import "vars";
+@import "animation";
+@import "widget";
+@import "sunset";
+
+.body {
+  align-items: center;
+  background-color: $bg;
+  color: $font;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  justify-content: center;
+  padding: 24px;
+}
